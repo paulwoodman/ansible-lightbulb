@@ -5,6 +5,11 @@
   become: yes
 
   tasks:
+  - name: install epel
+    yum:
+      name: epel-release
+      state: present
+      
   - name: install nginx
     yum:
       name: nginx
@@ -13,7 +18,7 @@
   - name: copy index.html
     copy:
       src: files/index.html
-      dest: /usr/share/nginx/html 
+      dest: /usr/share/nginx/html
 
   - name: start nginx
     service:
