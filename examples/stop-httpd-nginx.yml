@@ -1,0 +1,11 @@
+---
+- name: stop services to re-run playbooks
+  hosts: web
+
+  tasks:
+    - name: stop httpd
+      command: systemctl stop "{{ item }}"
+      ignore_errors: yes
+      with_items:
+        - httpd
+        - nginx
