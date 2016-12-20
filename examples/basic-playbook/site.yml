@@ -1,0 +1,16 @@
+---
+- name: Playbook to reverse adhoc commands deploying Apache
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: stop HTTPD service
+      service:
+        name: httpd
+        state: stopped
+      ignore_errors: yes
+
+    - name: remove httpd
+      yum:
+        name: httpd
+        state: absent

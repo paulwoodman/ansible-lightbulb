@@ -43,7 +43,7 @@ types:
     type: rhel7
   - name: node2
     type: rhel7
-  - name: node3
-    type: rhel7
-  - name: haproxy
-    type: rhel7
+#  - name: node3
+#    type: rhel7
+#  - name: haproxy
+#    type: rhel7

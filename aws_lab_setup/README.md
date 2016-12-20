@@ -12,15 +12,15 @@ Usage
 
 ## AWS Setup
 
-To set up the lab for Ansible training, follow these steps. 
+To set up the lab for Ansible training, follow these steps.
 
 1. Create an Amazon AWS account.
 
 2. Create an ssh key pair called 'ansible' (Network & Security->Key Pairs->Create Key Pair). Download the private key to your .ssh directory, e.g. to .ssh/ansible.pem. Alternatively, you can upload your own public key into AWS.
 
-   If using an AWS generated key add it to the ssh-agent: 
-   
-   ```bash 
+   If using an AWS generated key add it to the ssh-agent:
+
+   ```bash
    ssh-add ~/.ssh/ansible.pem
    ```
 
@@ -28,7 +28,7 @@ To set up the lab for Ansible training, follow these steps.
 
 4. Create a free Sendgrid account if you don't have one at [sendgrid.com](http://sendgrid.com) and record your credentials.
 
-5. Install the `sendgrid` python library: 
+5. Install the `sendgrid` python library:
 
    ```bash
    pip install sendgrid
@@ -37,7 +37,7 @@ To set up the lab for Ansible training, follow these steps.
 6. Clone the lightbulb repo:
 
    ```bash
-   git clone https://github.com/ansible/lightbulb.git
+   git clone https://github.com/gdykeman/lightbulbv2
    cd lightbulb/aws_lab_setup
    ```
 
@@ -83,5 +83,3 @@ If successful all your students will be emailed the details of their hosts inclu
 The playbook will start the instances, configure them for password auth, and dump an ansible inventory file for each user with their IPs and credentials into the current directory, then it will email every user their respective inventory file. This will also generate an instructor inventory file in the current directory which will let the instructor access the nodes of any student by simply targeting the the username as a host group.
 
 Ensure you have boto installed and configured, and that your public key is installed in the target region. The lab will get created in us-west-1 by default.
-
-

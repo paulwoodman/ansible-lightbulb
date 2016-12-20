@@ -1,9 +1,15 @@
-ansible web -m setup
+ansible web -m ping
+
+ansible web -m setup -l node-1
+
+ansible web -m command -a "hostname"
+
+ansible web -m command -a "hostname" -o
+
+ansible web -m command -a "uptime"
+
+ansible web -m shell -a 'echo $TERM'
 
 ansible web -b -m yum -a "name=httpd state=present"
 
 ansible web -b -m service -a "name=httpd state=started"
-
-ansible web -b -m service -a "name=httpd state=stopped"
-
-ansible web -b -m yum -a "name=httpd state=absent"
