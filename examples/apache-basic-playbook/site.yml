@@ -6,7 +6,7 @@
     httpd_packages:
       - httpd
       - mod_wsgi
-    apache_test_message: This is a test message
+    apache_test_message: Powered by Ansible
     apache_logo_message: Ansible by Red Hat
     apache_max_keep_alive_requests: 115
 
