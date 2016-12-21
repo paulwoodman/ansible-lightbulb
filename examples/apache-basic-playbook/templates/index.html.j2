@@ -1,6 +1,38 @@
-{{ apache_test_message }} {{ ansible_distribution }} {{ ansible_distribution_version }}  <br>
-Current Host: {{ ansible_hostname }} <br>
-Server list: <br>
-{% for host in groups['web'] %}
-{{ host }} <br>
-{% endfor %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Power of Ansible</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <style>
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 200%;
+}
+footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    font-size: 75%;
+}
+img {
+    margin: 0 auto;
+}
+  </style>
+</head>
+<body>
+<div class="container">
+    <img src="https://s3.amazonaws.com/towerdoc.redhatgov.io/_images/Ansible-Tower-Logo.png?X-Amz-Date=20161221T161720Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=cbc0963799b8e3fdb609e43a220629deb099283851c6bc52554414e35df2bf9f&X-Amz-Credential=ASIAIKVLGLIZRYBPMB4A/20161221/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=FQoDYXdzEHkaDHGvKpKka1yrZUmhJCLFA4XHL0RmFL6W72WPTpCHUYRMdfBwNO7y1hxM0qPuMayllvdJtdnZ0BR92pN7uIE8%2B%2BHwm466STzp5Prk6t3eOeLeHQ88/0a6OPuRij23NMtwrRA466nY1i7TnCEUbE75uWmHVZj%2Bkfay/qVqOvrgO8zc6LFW5v5x9yXjDeDn6I7G86/sH1t9YLZKrslchgR9RNCNo%2BS/yWUhW0rhpOF9WNJvWrJoZ/6h39sNQ%2B6CRKlDIcOAC9TaeeXpBUtKNcctH/6q40pnUlB4WqBmR7bcB1z0WQ358b47RWFuFtScihdgNR9QQg4LjaIwHDIAENOygx/1DNt4zJYCXkbR2vY4H4IYaIFPj6cIaN2gv4D1NQ7t5cHZ86fiMEIj/byUHL27AplsH3K0ClFlGC8YwisIMuy90nNz16WvLVm69A4MXB8QT1NL/nNvnoUW6X3ET5oW05XZqGKXoKtTrIOH5B8AVLs6HRepmZgfOjvQU3ztvuKSzBBnz91b%2Br0WTVPE6KkxUYFIrbHm%2BtHDG38HbkSwddskn9Av4gR6JCoPWg2rMrHhPn56aR2owxMfhhkLBWpobGZTmJBkfnYjkFVrR4ks5AkHdQXTlyjy6unCBQ%3D%3D"/>
+    <p>{{ apache_test_message }}</p>
+</div>
+<footer>{{ apache_logo_message }}</footer>
+</body>
+</html>
