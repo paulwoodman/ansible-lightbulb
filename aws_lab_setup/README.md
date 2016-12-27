@@ -26,58 +26,81 @@ To set up the lab for Ansible training, follow these steps.
 
 3. Login to the [EC2 dashboard](https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#) (this is for eu-west) and create a VPC with a single public subnet. Make note of both the VPC and Subnet IDs.
 
-4. Create a free Sendgrid account if you don't have one at [sendgrid.com](http://sendgrid.com) and record your credentials.
+4. Create an [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
 
-5. Install the `sendgrid` python library:
+5. Create a free Sendgrid account if you don't have one at [sendgrid.com](http://sendgrid.com) and record your credentials.
+
+6. Install the `sendgrid` python library: (Currently Not Working)
 
    ```bash
    pip install sendgrid
    ```
 
-6. Clone the lightbulb repo:
+7. Install `boto`.
+
+   ```bash
+   pip install boto
+   ```
+
+8. Create a `boto` configuration file containing your AWS access key ID and secret access key.
+
+    ```bash
+    mkdir ~/.aws
+    touch ~/.aws/credentials
+    chmod 600 ~/.aws/credentials
+
+    # The file should contain the following:
+    [default]
+    aws_access_key_id = [access key ID]
+    aws_secret_access_key = [secret key]
+    ```
+
+9. Clone the lightbulb repo:
 
    ```bash
    git clone https://github.com/gdykeman/lightbulbv2
    cd lightbulb/aws_lab_setup
    ```
 
-7. Define the following variables, either in a file passed in using `-e @extra_vars.yml` or directly in a `vars` section in `aws_lab_setup\infra-aws.yml`:
+10. Define the following variables, either in a file passed in using `-e @extra_vars.yml` or directly in a `vars` section in `aws_lab_setup\infra-aws.yml`:
 
     ```yaml
-    aws_key_name: username      # SSH key in AWS to put in all the instances
+    aws_key_name: ansible      # SSH key you created earlier
     aws_region: us-west-1     # region where the nodes will live
     name_prefix: TRAINING-LAB  # name prefix for all the VMs
     sendgrid_user: username   # username for the Sendgrid module
     sendgrid_pass: 'passwordgoeshere'     # sendgrid accound password
     instructor_email: 'Ansible Instructor <helloworld@redhat.com>'  # address you want the emails to arrive from
     admin_password: changeme123           # set this to something better if you'd like
+    vpc_id: vpc-2a994a4c                  # VPC ID of the VPC you created earlier
+    vpc_subnet_id: subnet-b70447fe        # VPC Subnet ID of the VPC you created earlier
     current_ssh_port: 22
     ssh_port: 22
     ```
 
-8. Create a `users.yml` by copying sample-users.yml and adding all your
+11. Create a `users.yml` by copying sample-users.yml and adding all your
 students:
 
    ```yaml
    users:
-      - username: foo
-        email: foo@redhat.com
+      - username: student1
+        email: student1@redhat.com
 
-      - username: bar
-        email: bar@redhat.com
+      - username: student2
+        email: student2@redhat.com
    ```
 
-9. You should now be able to run the playbook:
+12. You should now be able to run the playbook:
 
    ```bash
    $ ssh-add -l     # ensure that your ansible key is loaded into the agent
    $ ansible-playbook infra-aws.yml -e @extra_vars.yml -e @users.yml
    ```
 
-10. Check on the EC2 console and you should see instances being created like:
+13. Check on the EC2 console and you should see instances being created like:
 
    ```bash
-   ansibe_training-<student_username>-node1|2|3|haproxy|tower|control
+   TRAINING-LAB-<student_username>-node1|2|control
    ```
 
 If successful all your students will be emailed the details of their hosts including addresses and credentials, and an instructor_inventory file will be created listing all the student machines.
