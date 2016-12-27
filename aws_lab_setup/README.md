@@ -30,7 +30,7 @@ To set up the lab for Ansible training, follow these steps.
 
 5. Create a free Sendgrid account if you don't have one at [sendgrid.com](http://sendgrid.com) and record your credentials.
 
-6. Install the `sendgrid` python library: (This step will fail in the playbook, under review, but will not affect the provisioning of instances)
+6. Install the `sendgrid` python library: (This step will fail in the playbook - under review -   will NOT affect the provisioning of instances)
 
    ```bash
    pip install sendgrid
