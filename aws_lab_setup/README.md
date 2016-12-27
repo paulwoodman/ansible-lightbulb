@@ -26,7 +26,7 @@ To set up the lab for Ansible training, follow these steps.
 
 3. Login to the [EC2 dashboard](https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#) (this is for eu-west) and create a VPC with a single public subnet. Make note of both the VPC and Subnet IDs.
 
-4. Create an [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
+4. Create an AWS [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
 
 5. Create a free Sendgrid account if you don't have one at [sendgrid.com](http://sendgrid.com) and record your credentials.
 
