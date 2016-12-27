@@ -51,6 +51,8 @@ To set up the lab for Ansible training, follow these steps.
     sendgrid_pass: 'passwordgoeshere'     # sendgrid accound password
     instructor_email: 'Ansible Instructor <helloworld@redhat.com>'  # address you want the emails to arrive from
     admin_password: changeme123           # set this to something better if you'd like
+    current_ssh_port: 22
+    ssh_port: 22
     ```
 
 8. Create a `users.yml` by copying sample-users.yml and adding all your
