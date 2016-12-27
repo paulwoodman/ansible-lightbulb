@@ -58,8 +58,8 @@ To set up the lab for Ansible training, follow these steps.
 9. Clone the lightbulb repo:
 
    ```bash
-   git clone https://github.com/gdykeman/lightbulbv2
-   cd lightbulb/aws_lab_setup
+   git clone https://github.com/gdykeman/ansible-lightbulb.git
+   cd ansible-lightbulb/aws_lab_setup
    ```
 
 10. Define the following variables, either in a file passed in using `-e @extra_vars.yml` or directly in a `vars` section in `aws_lab_setup\infra-aws.yml`:
