@@ -28,21 +28,13 @@ To set up the lab for Ansible training, follow these steps.
 
 4. Create an AWS [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
 
-5. Create a free Sendgrid account if you don't have one at [sendgrid.com](http://sendgrid.com) and record your credentials.
-
-6. Install the `sendgrid` python library: (This step will fail in the playbook - under review -   will NOT affect the provisioning of instances)
-
-   ```bash
-   pip install sendgrid
-   ```
-
-7. Install `boto`.
+5. Install `boto`.
 
    ```bash
    pip install boto
    ```
 
-8. Create a `boto` configuration file containing your AWS access key ID and secret access key.
+6. Create a `boto` configuration file containing your AWS access key ID and secret access key.
 
     ```bash
     mkdir ~/.aws
@@ -53,6 +45,13 @@ To set up the lab for Ansible training, follow these steps.
     [default]
     aws_access_key_id = [access key ID]
     aws_secret_access_key = [secret key]
+    ```
+7. Create a free Sendgrid account if you don't have one a[sendgrid.com](http://sendgrid.com) and record your credentials.
+
+8. Install the `sendgrid` python library: (This step will fail in the playbook - undereview -   will NOT affect the provisioning of instances)
+
+    ```bash
+    pip install sendgrid
     ```
 
 9. Clone the lightbulb repo:
