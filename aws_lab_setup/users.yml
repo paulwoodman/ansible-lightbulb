@@ -1,0 +1,3 @@
+users:
+  - username: ansibletest
+    email: ansible@redhat.com

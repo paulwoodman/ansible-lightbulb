@@ -1,0 +1,16 @@
+[all:vars]
+ansible_user=ansibletest
+ansible_ssh_pass=changeme123
+ansible_port=22
+
+
+[web]
+node-1 ansible_host=52.87.175.146
+node-2 ansible_host=54.209.208.111
+
+[control]
+control ansible_host=54.174.99.129
+
+[haproxy]
+
+[grafana]

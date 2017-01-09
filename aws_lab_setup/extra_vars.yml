@@ -1,0 +1,11 @@
+aws_key_name: ansible-ps      # SSH key in AWS to put in all the instances
+aws_region: 'us-east-1'     # region where the nodes will live
+name_prefix: Training  # name prefix for all the VMs
+sendgrid_user: gdykeman   # username for the Sendgrid module
+sendgrid_pass: ansible123     # sendgrid accound password
+instructor_email: 'Ansible Instructor <gdykeman@redhat.com>'  # address you want the emails to arrive from
+admin_password: changeme123         # set this to something better if you'd like
+vpc_id: vpc-2a994a4c
+vpc_subnet_id: subnet-b70447fe
+current_ssh_port: 22
+ssh_port: 22

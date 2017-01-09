@@ -14,3 +14,4 @@
       yum:
         name: httpd
         state: absent
+      ignore_errors: yes

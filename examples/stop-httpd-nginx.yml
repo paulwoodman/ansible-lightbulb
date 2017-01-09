@@ -5,7 +5,9 @@
 
   tasks:
     - name: stop httpd and nginx
-      command: systemctl stop "{{ item }}"
+      service:
+         name: {{ item }}
+         state: stopped
       ignore_errors: yes
       with_items:
         - httpd
